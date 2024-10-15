@@ -14,12 +14,22 @@ public class Bookings {
 
 
         while( i <= totalBookings) {
+
+            // Structure 10:30 am - 12:30 pm
             String bookingInstance = input.nextLine();
+
+            // Remove all white spaces
             String newBook = bookingInstance.replace(" ", "");
 
             if (newBook.length() == 0) {
                 continue;
             }
+
+            // Separating beginning time and ending times by finding dash location
+            int dashIndex = newBook.indexOf("-");
+            String startTime = newBook.substring(0, dashIndex);
+            String endTime = newBook.substring(dashIndex + 1);
+
             i++;
         }
     }
