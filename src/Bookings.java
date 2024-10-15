@@ -41,7 +41,7 @@ public class Bookings {
     public static void min_converter (String time) {
 
         // Separating hour, minute and suffix
-        // Given the time 10:30am
+        // Given the time "10:30am"
         int colonIndex = time.indexOf(":"); // Find index position of :
         String hour = time.substring(0, colonIndex); // hour = "10"
         String min = time.substring(colonIndex + 1, colonIndex + 3); // min = "30"
