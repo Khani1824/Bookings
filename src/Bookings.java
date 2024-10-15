@@ -47,5 +47,9 @@ public class Bookings {
         String min = time.substring(colonIndex + 1, colonIndex + 3); // min = "30"
         String suffix = time.substring(colonIndex + 3); // suffix = "am"
 
+        // Converting time from Strings to Integer
+        int hourInt = Integer.parseInt(hour); // hourInt = 10
+        int minInt = Integer.parseInt(min); // minInt = 30
+
     }
 }
