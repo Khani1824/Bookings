@@ -30,7 +30,22 @@ public class Bookings {
             String startTime = newBook.substring(0, dashIndex);
             String endTime = newBook.substring(dashIndex + 1);
 
+            // Where min_converter method will be called
+
+
             i++;
         }
+    }
+
+    // Method takes in a specific time
+    public static void min_converter (String time) {
+
+        // Separating hour, minute and suffix
+        // Given the time 10:30am
+        int colonIndex = time.indexOf(":"); // Find index position of :
+        String hour = time.substring(0, colonIndex); // hour = "10"
+        String min = time.substring(colonIndex + 1, colonIndex + 3); // min = "30"
+        String suffix = time.substring(colonIndex + 3); // suffix = "am"
+
     }
 }
