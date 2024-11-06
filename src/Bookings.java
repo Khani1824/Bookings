@@ -91,7 +91,6 @@ public class Bookings {
 
        // Calculating the total time in a way that converts time into an Integer
         int totalTime = (hourInt * 60) + minInt + suffixInt;// total time = (10 * 60 )+ 30 + 0 = 630
-
         return totalTime;
     }
 
