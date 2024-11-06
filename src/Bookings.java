@@ -1,7 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bookings {
     public static void main(String[] args) {
+
+        ArrayList<Integer> startTimes = new ArrayList<>();
+        ArrayList <Integer> endTimes = new ArrayList<>();
 
         System.out.println("Enter the number of bookings");
         Scanner input = new Scanner(System.in);
@@ -30,11 +34,18 @@ public class Bookings {
             String startTime = newBook.substring(0, dashIndex);
             String endTime = newBook.substring(dashIndex + 1);
 
-            // Calling min_converter method
-            int newStartTime = min_converter(startTime);
-            int newEndTime = min_converter(endTime);
+            // Calling min_converter method given 10:30 am = 630 and given 12:30 pm = 750
+            int newStartTime = min_converter(startTime); // 630
+            int newEndTime = min_converter(endTime);// 750
+
+            // Adding the start time and end time values to separate
+            startTimes.add(newStartTime);  // [630]
+            endTimes.add(newEndTime); // [750]
+
             i++;
         }
+
+
     }
 
     // Method takes in a specific time
