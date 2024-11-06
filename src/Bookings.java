@@ -41,7 +41,6 @@ public class Bookings {
             // Adding the start time and end time values to separate
             startTimes.add(newStartTime);  // [630]
             endTimes.add(newEndTime); // [750]
-
             i++;
         }
 
