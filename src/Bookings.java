@@ -30,15 +30,15 @@ public class Bookings {
             String startTime = newBook.substring(0, dashIndex);
             String endTime = newBook.substring(dashIndex + 1);
 
-            // Where min_converter method will be called
-
-
+            // Calling min_converter method
+            int newStartTime = min_converter(startTime);
+            int newEndTime = min_converter(endTime);
             i++;
         }
     }
 
     // Method takes in a specific time
-    public static void min_converter (String time) {
+    public static int min_converter (String time) {
 
         // Separating hour, minute and suffix
         // Given the time "10:30am"
@@ -51,5 +51,19 @@ public class Bookings {
         int hourInt = Integer.parseInt(hour); // hourInt = 10
         int minInt = Integer.parseInt(min); // minInt = 30
 
+        // Changing my am/pm suffix into a number
+        int suffixInt = 0;
+        if ( suffix.equals("am")) { // true
+            suffixInt = 0;
+        } if (suffix.equals("pm")) {
+            suffixInt = 12 * 60;
+        } if (suffix.equals("pm") && hour.equals("12")) {
+            suffixInt = 0;
+        }
+
+       // Calculating the total time in a way that converts time into an Integer
+        int totalTime = (hourInt * 60) + minInt + suffixInt;// total time = (10 * 60 )+ 30 + 0 = 630
+
+        return totalTime;
     }
 }
