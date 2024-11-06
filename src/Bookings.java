@@ -7,7 +7,8 @@ public class Bookings {
         ArrayList<Integer> startTimes = new ArrayList<>();
         ArrayList <Integer> endTimes = new ArrayList<>();
 
-        System.out.println("Enter the number of bookings");
+
+        System.out.println("Enter the number of bookings:");
         Scanner input = new Scanner(System.in);
 
         int totalBookings = input.nextInt();
@@ -44,8 +45,25 @@ public class Bookings {
             i++;
         }
 
+        // Creating a while loop calculate the number of Clashes within the separate arrays
+        int clashes = 0;
+        int x = 1;
+        while( x <= totalBookings) {
+            // getting times in my array
+            clashes = counter( startTimes, endTimes);
+            x++;
+        }
+
+        // print statements ( use if statements)
+        if (clashes == 0) {
+            System.out.println("Good to go !");
+        }
+        if( 0 < clashes){
+            System.out.println("Let's play Sardines! Number of paris that clash: " + clashes);
+        }
 
     }
+
 
     // Method takes in a specific time
     public static int min_converter (String time) {
@@ -76,4 +94,21 @@ public class Bookings {
 
         return totalTime;
     }
+
+
+    // Method taking in two
+    public static int counter ( ArrayList <Integer>ArrayList1 , ArrayList <Integer> ArrayList2) {
+
+        int i;
+        int count = 0;
+
+        for (i = 0; i < ArrayList1.size() - 1; i++) {
+            if ((ArrayList1.get(i) < ArrayList2.get(i + 1) &&  ArrayList1.get(i + 1) <= ArrayList1.get(i) ) || (ArrayList2.get(i) < ArrayList2.get(i + 1) &&  ArrayList1.get(i + 1) < ArrayList2.get(i))) {
+                count += 1;
+            }
+        }
+        return count;
+
+    }
 }
+
